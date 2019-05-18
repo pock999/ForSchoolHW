@@ -1,0 +1,38 @@
+{%extends "base.html" %}
+{% block mainbody %}
+    <h1 style="margin-top:200px;">輸入名子</h1>
+        <form method="POST" action="/play/">
+            {% csrf_token %}
+            <div class="form-group" >
+                <label for="exampleInputEmail1">名子</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="暱稱" name="name">
+            </div>
+
+            <div class="form-group" >
+                <select class="form-control" name="sub1">
+                    <option value="" selected="true" disabled="disabled">自選科目1</option>
+                    <option value="國文">國文</option>
+                    <option value="英文">英文</option>
+                    <option value="數學">數學</option>
+                    <option value="地理">地理</option>
+                    <option value="自然">自然</option>
+                    <option value="歷史">歷史</option>
+                </select>
+            </div>
+            <div class="form-group" >
+                <select class="form-control" name="sub2">
+                    <option value="" selected="true" disabled="disabled">自選科目2</option>
+                    <option value="國文">國文</option>
+                    <option value="英文">英文</option>
+                    <option value="數學">數學</option>
+                    <option value="地理">地理</option>
+                    <option value="自然">自然</option>
+                    <option value="歷史">歷史</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" style='width:120px'>開始遊戲</button>
+            </div>
+
+        </form>
+{% endblock %}
