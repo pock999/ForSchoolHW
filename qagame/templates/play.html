@@ -1,10 +1,181 @@
 {%extends "base.html" %}
 {% block mainbody %}
+
     <div class="alert alert-primary" role="alert">
-        <h4 class="alert-heading" style="text-align:center;">開始作答吧!!</h4>
+        <h4 class="alert-heading" style="text-align:center;">開始作答吧!!{{play_name}}</h4>
     </div>
-    <div class="jumbotron jumbotron-fluid">
-        <h3 class="display-12">Fluid jumbotron</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    </div>
+
+    <form method="POST" action="/result/">
+        {% csrf_token %}
+        {% for per_qa in All_QA %}
+            <div class="jumbotron jumbotron-fluid" style="padding-left:20px;">
+                <h3 class="display-12">第{{per_qa.no}}題<{{per_qa.subject}}></h1>
+                <p class="lead">
+                {{per_qa.topic}}<br/>
+                (A) {{per_qa.optionA}} (B) {{per_qa.optionB}} (C) {{per_qa.optionC}} (D) {{per_qa.optionD}}
+                </p>
+                <select class="form-control form-control-sm col-1" id="select{{per_qa.no}}">
+                    <option value="{{per_qa.optionA}}">A</option>
+                    <option value="{{per_qa.optionB}}">B</option>
+                    <option value="{{per_qa.optionC}}">C</option>
+                    <option value="{{per_qa.optionD}}">D</option>
+                </select>
+                <div class="btn-group" role="group" aria-label="Basic example" style="margin-top:10px;">
+                    <button type="button" class="btn btn-success btn-secondary" id="{{per_qa.hint_btn}}">提示</button>
+                    <button type="button" class="btn btn-danger btn-secondary" id="{{per_qa.delete_btn}}">刪去法</button>
+                </div>
+                <input type="hidden" id="{{per_qa.hint_count}}" name="{{per_qa.hint_btn}}" value="0">
+                <input type="hidden" id="{{per_qa.delete_count}}" name="{{per_qa.delete_btn}}" value="0">
+                <div id = "{{per_qa.message_id}}"></div>
+            </div>
+        {% endfor %}
+
+        <div>
+            <button type="submit" class="btn btn-primary" style='width:120px'>提交答案</button>
+        </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+        console.log('aaa');
+        
+            var hint_ary = {{ hint_ary|safe }}
+            var delete_ary = {{ delete_ary|safe }}
+            
+            $('#hint1').click(function(){
+                if($('#hint1_count').val()=='0'){
+                    $('#message1').append(hint_ary[0]+'/');
+                }
+                $('#hint1_count').val('1');     
+            });
+            $('#delete1').click(function(){
+                if($('#delete1_count').val()=='0'){
+                    $('#message1').append('不是'+delete_ary[0]+'/');
+                }
+                $('#delete1_count').val('1');
+            });
+            
+            $('#hint2').click(function(){
+                if($('#hint2_count').val()=='0'){
+                    $('#message2').append(hint_ary[1]+'/');
+                }
+                $('#hint2_count').val('1');     
+            });
+            $('#delete2').click(function(){
+                if($('#delete2_count').val()=='0'){
+                    $('#message2').append('不是'+delete_ary[1]+'/');
+                }
+                $('#delete2_count').val('1');
+            });
+
+            $('#hint3').click(function(){
+                if($('#hint3_count').val()=='0'){
+                    $('#message3').append(hint_ary[2]+'/');
+                }
+                $('#hint3_count').val('1');     
+            });
+            $('#delete3').click(function(){
+                if($('#delete3_count').val()=='0'){
+                    $('#message3').append('不是'+delete_ary[2]+'/');
+                }
+                $('#delete3_count').val('1');
+            });
+
+            $('#hint4').click(function(){
+                if($('#hint4_count').val()=='0'){
+                    $('#message4').append(hint_ary[3]+'/');
+                }
+                $('#hint4_count').val('1');     
+            });
+            $('#delete4').click(function(){
+                if($('#delete4_count').val()=='0'){
+                    $('#message4').append('不是'+delete_ary[3]+'/');
+                }
+                $('#delete4_count').val('1');
+            });
+
+            $('#hint5').click(function(){
+                if($('#hint5_count').val()=='0'){
+                    $('#message5').append(hint_ary[4]+'/');
+                }
+                $('#hint5_count').val('1');     
+            });
+            $('#delete5').click(function(){
+                if($('#delete5_count').val()=='0'){
+                    $('#message5').append('不是'+delete_ary[4]+'/');
+                }
+                $('#delete5_count').val('1');
+            });
+
+            $('#hint6').click(function(){
+                if($('#hint6_count').val()=='0'){
+                    $('#message6').append(hint_ary[5]+'/');
+                }
+                $('#hint6_count').val('1');     
+            });
+            $('#delete6').click(function(){
+                if($('#delete6_count').val()=='0'){
+                    $('#message6').append('不是'+delete_ary[5]+'/');
+                }
+                $('#delete6_count').val('1');
+            });
+
+            $('#hint7').click(function(){
+                if($('#hint7_count').val()=='0'){
+                    $('#message7').append(hint_ary[6]+'/');
+                }
+                $('#hint7_count').val('1');     
+            });
+            $('#delete7').click(function(){
+                if($('#delete7_count').val()=='0'){
+                    $('#message7').append('不是'+delete_ary[6]+'/');
+                }
+                $('#delete7_count').val('1');
+            });
+
+            $('#hint8').click(function(){
+                if($('#hint8_count').val()=='0'){
+                    $('#message8').append(hint_ary[7]+'/');
+                }
+                $('#hint8_count').val('1');     
+            });
+            $('#delete8').click(function(){
+                if($('#delete8_count').val()=='0'){
+                    $('#message8').append('不是'+delete_ary[7]+'/');
+                }
+                $('#delete8_count').val('1');
+            });
+
+            $('#hint9').click(function(){
+                if($('#hint9_count').val()=='0'){
+                    $('#message9').append(hint_ary[8]+'/');
+                }
+                $('#hint9_count').val('1');     
+            });
+            $('#delete9').click(function(){
+                if($('#delete9_count').val()=='0'){
+                    $('#message9').append('不是'+delete_ary[8]+'/');
+                }
+                $('#delete9_count').val('1');
+            });
+
+            $('#hint10').click(function(){
+                if($('#hint10_count').val()=='0'){
+                    $('#message10').append(hint_ary[9]+'/');
+                }
+                $('#hint10_count').val('1');     
+            });
+            $('#delete10').click(function(){
+                if($('#delete10_count').val()=='0'){
+                    $('#message10').append('不是'+delete_ary[9]+'/');
+                }
+                $('#delete10_count').val('1');
+            });
+        
+
+
+    </script>
 {% endblock %}
+
+    

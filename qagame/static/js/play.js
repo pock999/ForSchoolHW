@@ -1,0 +1,135 @@
+console.log('aaa');
+$(document).ready(function(){
+    hint_ary = []
+    delete_ary = []
+    $('#hint1').click(function(){
+        if($('#hint1_count').val()=='0'){
+            $('#message1').append('{{per_qa.hint}}'+'/');
+        }
+        $('#hint1_count').val('1');     
+    });
+    $('#delete1').click(function(){
+        if($('#delete1_count').val()=='0'){
+            $('#message1').append('不是{{per_qa.remove}}/');
+        }
+        $('#delete1_count').val('1');
+    });
+    
+    $('#hint2').click(function(){
+        if($('#hint2_count').val()=='0'){
+            $('#message2').append('{{per_qa.hint}}/');
+        }
+        $('#hint2_count').val('1');     
+    });
+    $('#delete2').click(function(){
+        if($('#delete2_count').val()=='0'){
+            $('#message2').append('不是{{per_qa.remove}}/');
+        }
+        $('#delete2_count').val('1');
+    });
+
+    $('#hint3').click(function(){
+        if($('#hint3_count').val()=='0'){
+            $('#message3').append('{{per_qa.hint}}/');
+        }
+        $('#hint3_count').val('1');     
+    });
+    $('#delete3').click(function(){
+        if($('#delete3_count').val()=='0'){
+            $('#message3').append('不是{{per_qa.remove}}/');
+        }
+        $('#delete3_count').val('1');
+    });
+
+    $('#hint4').click(function(){
+        if($('#hint4_count').val()=='0'){
+            $('#message4').append('{{per_qa.hint}}/');
+        }
+        $('#hint4_count').val('1');     
+    });
+    $('#delete4').click(function(){
+        if($('#delete4_count').val()=='0'){
+            $('#message4').append('不是{{per_qa.remove}}/');
+        }
+        $('#delete4_count').val('1');
+    });
+
+    $('#hint5').click(function(){
+        if($('#hint5_count').val()=='0'){
+            $('#message5').append('{{per_qa.hint}}/');
+        }
+        $('#hint5_count').val('1');     
+    });
+    $('#delete5').click(function(){
+        if($('#delete5_count').val()=='0'){
+            $('#message5').append('不是{{per_qa.remove}}/');
+        }
+        $('#delete5_count').val('1');
+
+        $('#hint6').click(function(){
+            if($('#hint6_count').val()=='0'){
+                $('#message6').append('{{per_qa.hint}}/');
+            }
+            $('#hint6_count').val('1');     
+        });
+        $('#delete6').click(function(){
+            if($('#delete6_count').val()=='0'){
+                $('#message6').append('不是{{per_qa.remove}}/');
+            }
+            $('#delete6_count').val('1');
+        });
+
+        $('#hint7').click(function(){
+            if($('#hint7_count').val()=='0'){
+                $('#message7').append('{{per_qa.hint}}/');
+            }
+            $('#hint7_count').val('1');     
+        });
+        $('#delete7').click(function(){
+            if($('#delete7_count').val()=='0'){
+                $('#message7').append('不是{{per_qa.remove}}/');
+            }
+            $('#delete7_count').val('1');
+        });
+
+        $('#hint8').click(function(){
+            if($('#hint8_count').val()=='0'){
+                $('#message8').append('{{per_qa.hint}}/');
+            }
+            $('#hint8_count').val('1');     
+        });
+        $('#delete8').click(function(){
+            if($('#delete8_count').val()=='0'){
+                $('#message8').append('不是{{per_qa.remove}}/');
+            }
+            $('#delete8_count').val('1');
+        });
+
+        $('#hint9').click(function(){
+            if($('#hint9_count').val()=='0'){
+                $('#message9').append('{{per_qa.hint}}/');
+            }
+            $('#hint9_count').val('1');     
+        });
+        $('#delete9').click(function(){
+            if($('#delete9_count').val()=='0'){
+                $('#message9').append('不是{{per_qa.remove}}/');
+            }
+            $('#delete9_count').val('1');
+        });
+
+        $('#hint10').click(function(){
+            if($('#hint10_count').val()=='0'){
+                $('#message10').append('{{per_qa.hint}}/');
+            }
+            $('#hint10_count').val('1');     
+        });
+        $('#delete10').click(function(){
+            if($('#delete10_count').val()=='0'){
+                $('#message10').append('不是{{per_qa.remove}}/');
+            }
+            $('#delete10_count').val('1');
+        });
+    });
+});
+
