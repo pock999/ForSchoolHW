@@ -14,11 +14,11 @@
                 {{per_qa.topic}}<br/>
                 (A) {{per_qa.optionA}} (B) {{per_qa.optionB}} (C) {{per_qa.optionC}} (D) {{per_qa.optionD}}
                 </p>
-                <select class="form-control form-control-sm col-1" id="select{{per_qa.no}}">
-                    <option value="{{per_qa.optionA}}">A</option>
-                    <option value="{{per_qa.optionB}}">B</option>
-                    <option value="{{per_qa.optionC}}">C</option>
-                    <option value="{{per_qa.optionD}}">D</option>
+                <select class="form-control form-control-sm col-1" id="per_qa.select_id" name="{{per_qa.dropdown}}">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
                 </select>
                 <div class="btn-group" role="group" aria-label="Basic example" style="margin-top:10px;">
                     <button type="button" class="btn btn-success btn-secondary" id="{{per_qa.hint_btn}}">提示</button>
@@ -26,11 +26,13 @@
                 </div>
                 <input type="hidden" id="{{per_qa.hint_count}}" name="{{per_qa.hint_btn}}" value="0">
                 <input type="hidden" id="{{per_qa.delete_count}}" name="{{per_qa.delete_btn}}" value="0">
+                <input type="hidden" id="{{per_qa.answer}}" name="{{per_qa.answer_btn}}" value="{{per_qa.answer}}">
                 <div id = "{{per_qa.message_id}}"></div>
             </div>
         {% endfor %}
 
         <div>
+            <input type="hidden"  name="player" value="{{play_name}}">
             <button type="submit" class="btn btn-primary" style='width:120px'>提交答案</button>
         </div>
     </form>

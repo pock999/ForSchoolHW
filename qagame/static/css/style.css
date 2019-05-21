@@ -1,5 +1,6 @@
 *{
     font-family: '微軟正黑體';
+    box-sizing: border-box;
 }
 .container{
     width:960px;
