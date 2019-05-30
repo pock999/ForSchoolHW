@@ -11,7 +11,21 @@
             <h2>目前最高分玩家:{{ first }} 分數:{{score_st}}</h2>
         </div>
     </div>
-    
+    <div class="modal" tabindex="-1" role="dialog" id="final">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">訊息</h5>
+            </div>
+            <div class="modal-body">
+                <p>重新遊戲即可回到起始頁面</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="return">重新遊戲</button>
+            </div>
+            </div>
+        </div>
+    </div>
     {% for per_rank in rank_list %}
         <div class="jumbotron jumbotron-fluid bg-white">
             名字:{{per_rank.this_name}}
@@ -45,7 +59,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script>
         jQuery('#close_btn').click(function(){
-            jQuery('#champion').fadeOut(300, function() { $(this).remove(); })
+            jQuery('#champion').fadeOut(300, function() { $(this).remove(); });
+            jQuery('#final').fadeIn();
+        });
+        jQuery('#return').click(function(){
+            window.location.href = '/';
         });
     </script>
 {% endblock %}
