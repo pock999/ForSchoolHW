@@ -2,7 +2,7 @@ binarytree==4.0.0
 certifi==2019.3.9
 chardet==3.0.4
 cycler==0.10.0
-Django==2.2
+Django==2.2.8
 et-xmlfile==1.0.1
 get==2019.4.13
 idna==2.8
