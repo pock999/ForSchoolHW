@@ -10,7 +10,7 @@ jdcal==1.4.1
 kiwisolver==1.0.1
 matplotlib==3.0.3
 mpl-finance==0.10.0
-numpy==1.16.2
+numpy==1.22.0
 openpyxl==2.6.2
 pandas==0.24.1
 post==2019.4.13
